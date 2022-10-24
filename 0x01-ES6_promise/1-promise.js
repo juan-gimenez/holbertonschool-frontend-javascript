@@ -1,13 +1,10 @@
 export default function getFullResponseFromApi(success)  {
     return new Promise((resolve, reject) => {
 	/* Return a Promise  */
-	if (success == NULL) {
-            reject(new Error('The fake API is not working currently'));
+	if (success) {
+            resolve({ status: 200, body: 'Success' });
 	} else {
-            resolve({
-		status: 200,
-		body: 'Success',
-	    });
+            reject(Error('The fake API is not working currently'));
 	}
     });
 }
